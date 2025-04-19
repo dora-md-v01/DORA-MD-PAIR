@@ -1,0 +1,288 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCIFER MD PAIR CODE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .slide-in {
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes cardSlideIn {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .card-slide-in {
+      animation: cardSlideIn 1s ease-in-out;
+    }
+
+    .button {
+      --color: #2e42ff;
+      padding: 0.8em 2em;
+      background-color: transparent;
+      border-radius: 0.6em;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-weight: 700;
+      font-size: 17px;
+      border: 2px solid var(--color);
+      font-family: inherit;
+      text-transform: uppercase;
+      color: #ffffff;
+      z-index: 1;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .button::before,
+    .button::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      background-color: var(--color);
+      transition: 0.7s ease-in-out;
+    }
+
+    .button::before {
+      top: -1em;
+      left: -1em;
+    }
+
+    .button::after {
+      left: calc(100% + 1em);
+      top: calc(100% + 1em);
+    }
+
+    .button:hover::before,
+    .button:hover::after {
+      height: 410px;
+      width: 410px;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #2e42ff, #6a75ff);
+      color: #ffffff;
+      border-color: #6a75ff;
+      box-shadow:
+        0 6px 15px rgba(46, 66, 255, 0.4),
+        0 8px 24px rgba(46, 66, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .button:active {
+      transform: scale(0.97);
+      filter: brightness(0.85);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #2e42ff, #5c6bff);
+    }
+
+    .button:focus {
+      outline: none;
+      border-color: #7289da;
+      box-shadow: 0 0 0 4px rgba(46, 66, 255, 0.3);
+    }
+
+    .textInputWrapper {
+      position: relative;
+      width: 100%;
+      margin: 12px 0;
+      --accent-color: #a3e583;
+    }
+
+    .textInputWrapper:before {
+      transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    }
+
+    .textInputWrapper:before,
+    .textInputWrapper:after {
+      content: "";
+      left: 0;
+      right: 0;
+      position: absolute;
+      pointer-events: none;
+      bottom: -1px;
+      z-index: 4;
+      width: 100%;
+    }
+
+    .textInputWrapper:focus-within:before {
+      border-bottom: 1px solid var(--accent-color);
+    }
+
+    .textInputWrapper:before {
+      transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    }
+
+    .textInputWrapper:focus-within:before {
+      border-bottom: 1px solid var(--accent-color);
+      transform: scaleX(1);
+    }
+
+    .textInputWrapper:focus-within:after {
+      border-bottom: 2px solid var(--accent-color);
+      transform: scaleX(1);
+    }
+
+    .textInputWrapper:after {
+      content: "";
+      transform: scaleX(0);
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      will-change: transform;
+      border-bottom: 2px solid var(--accent-color);
+      border-bottom-color: var(--accent-color);
+    }
+
+    .textInput::placeholder {
+      transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      opacity: 1;
+      user-select: none;
+      color: rgba(255, 255, 255, 0.582);
+    }
+
+    .textInputWrapper .textInput {
+      border-radius: 5px 5px 0px 0px;
+      box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+      max-height: 36px;
+      background-color: #252525;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 200ms;
+      transition-property: background-color;
+      color: #e8e8e8;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px;
+      width: 100%;
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+    }
+
+    .textInputWrapper .textInput:focus,
+    .textInputWrapper .textInput:active {
+      outline: none;
+    }
+
+    .textInputWrapper:focus-within .textInput,
+    .textInputWrapper .textInput:focus,
+    .textInputWrapper .textInput:active {
+      background-color: #353535;
+    }
+
+    .textInputWrapper:focus-within .textInput::placeholder {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="flex justify-center items-center min-h-screen">
+  <img src="https://files.catbox.moe/jnlap1.jpeg" alt="Background image of a futuristic digital landscape" class="absolute inset-0 w-full h-full object-cover z-0 fade-in">
+  <div class="flex flex-col items-center w-full max-w-md p-4 relative z-10 card-slide-in">
+    <div class="bg-white bg-opacity-70 p-8 rounded-xl shadow-2xl w-full">
+      <div class="text-center">
+        <i class="fa fa-user text-5xl text-purple-700"></i>
+        <h3 class="text-2xl font-bold mt-4 text-gray-800">LUCIFER MD PAIR CODE</h3>
+        <p class="mt-4 text-gray-600">Enter your number with country code.</p>
+      </div>
+      <div class="mt-6">
+        <div class="flex flex-col space-y-4">
+          <div class="textInputWrapper">
+            <input type="number" id="number" placeholder="+94740482244" class="textInput">
+          </div>
+          <button id="submit" class="button">Enter</button>
+        </div>
+      </div>
+      <div id="waiting-message" class="text-center mt-4 hidden">In process...</div>
+      <div id="pair" class="text-center mt-4"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      obj.innerText = "COPIED";
+      obj.style = "color:blue;font-weight:bold";
+      obj.size = "5";
+      setTimeout(() => {
+        obj.innerText = text;
+        obj.style = "color:black;font-weight-bold";
+        obj.size = "5";
+      }, 500);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!c.value) {
+        a.innerHTML = '<a style="color:black;font-weight:bold">Enter your whatsapp number with country code.</a><br><br>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:black;font-weight:bold">Invalid number format</a><br><br>';
+      } else {
+        const bc = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = bc.split('');
+        cc.map(a => {
+          bbc += a;
+          if (bbc.length == 3) {
+            bb += " " + a;
+          } else if (bbc.length == 8) {
+            bb += " " + a;
+          } else {
+            bb += a;
+          }
+        });
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:black;font-size:20px";
+        a.innerHTML = '<a style="color:black;font-weight:bold">Please wait for some time</a><br><br>';
+        let { data } = await axios(`/code?number=${bc}`);
+        let code = data.code || "Service Unavailable";
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' + code + '</span></font><br><br><br>';
+      }
+    });
+  </script>
+</body>
+</html>

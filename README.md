@@ -1,1 +1,1 @@
-# DORA-MD-PAIR
+# pair-site
