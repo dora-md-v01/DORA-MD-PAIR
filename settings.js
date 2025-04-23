@@ -1,5 +1,5 @@
 module.exports = {
-    PREFIX: "DORA-MD~",
+    PREFIX: "HiRUWA-MD~",
     CONNECTED_MESSAGE: `
 ┏━━━━━━━━━━━━━━
 ┃DORA MD SESSION IS 
