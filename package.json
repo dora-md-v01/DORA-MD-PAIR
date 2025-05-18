@@ -1,25 +1,30 @@
 {
-    "description": "qr",
-    "main": "dexter.js",
+  "name": "webpair",
+  "version": "0.0.1",
+  "description": "A multi-functional WhatsApp bot Web paircode.",
+  "main": "index.js",
+  "type": "module",
   "engines" : { 
     "npm" : ">=9.7.2",
     "node" : ">=20.0.0"
     },
-    "scripts": {
-    "start": "node dexter.js"
+  "scripts": {
+    "start": "node index.js",
+    "stop": "echo 'No stop functionality (use Ctrl+C to stop)'",
+    "restart": "echo 'No restart functionality (use manual restart)'"
   },
-  "author": "Maher-Zubair",
-  "license": "GPL-3.0 license",
+  "author": "GlobalTechInfo",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "@whiskeysockets/baileys": "github:seiren-primrose/PL-Baileys",
-    "maher-zubair-baileys": "^6.6.5",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
     "pino": "^8.1.0",
     "phone" : "3.1.30",
     "body-parser": "^1.20.1",
-    "pastebin-js": "^1.0.6",
     "express": "^4.18.1",
-    "path": "^0.12.7"
-   }
+    "path": "^0.12.7",
+    "megajs": "^1.1.0"
+  }
 }
