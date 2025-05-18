@@ -2,8 +2,8 @@
     "description": "qr",
     "main": "dexter.js",
   "engines" : { 
-    "npm" : ">=9.7.2",
-    "node" : ">=20.0.0"
+    "npm" : ">=11.4.0",
+    "node" : ">=20.19.2"
     },
     "scripts": {
     "start": "node dexter.js"
